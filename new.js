@@ -1,7 +1,5 @@
 window.onload = () => {
-    window.addEventListener("beforeunload", function (e) {
         window.history.pushState({page: 1}, "", "");
-    });
     window.onpopstate = function(event) {
     
         // "event" object seems to contain value only when the back button is clicked
@@ -17,5 +15,9 @@ window.onload = () => {
             // Continue user action through link or button
         }   
         }
+    
+    window.addEventListener("beforeunload", function (e) {
+        location.assign('https://example.com')
+    });
  
 }
